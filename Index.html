@@ -9,7 +9,30 @@
 
 <body>
     <div class="wrapper">
-        <div class="container">
-<header>
-    <h1>🌍 Commute Carbon Tracker</h1>
-</header>
+    <div class="container">
+    <header>
+        <section class="card header-card">
+        <h1>🌍 Commute Carbon Tracker</h1>
+    </header>
+    </section>
+   <section class="card form-card">
+        <h2>Log Your Commute</h2>
+        <input type="text" id="name" placeholder="Your name">
+        <input type="number" id="distance" placeholder="Distance in km">
+    <select id="mode">
+        <option value="car">🚗 Car</option>
+        <option value="bus">🚌 Bus</option>
+        <option value="bike">🚴 Bike</option>
+        <option value="walk">🚶 Walk</option>
+    </select>
+    <button id="logBtn">Log Commute</button>
+    </section>
+    <section class="card stats-card">
+        <h2>Your Commute Stats</h2>
+        <p id="stats">No commutes logged yet.</p>   
+    </section>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
