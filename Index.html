@@ -8,31 +8,43 @@
 </head>
 
 <body>
-    <div class="wrapper">
-    <div class="container">
-    <header>
-        <section class="card header-card">
-        <h1>🌍 Commute Carbon Tracker</h1>
-    </header>
-    </section>
-   <section class="card form-card">
-        <h2>Log Your Commute</h2>
-        <input type="text" id="name" placeholder="Your name">
-        <input type="number" id="distance" placeholder="Distance in km">
+<center>
+<div class="app">
+    <h1><i class="fa-solid fa-car"></i> COMMUTE CARBON TRACKER</h1>
+    <div>
+      <p class="subtitle"> “Track today, save progress, sustain the future.”</p>
+    </div>
+</center>
+   <div class="card">
+    <h2>Log Commute</h2>
+
+    <input type="number" id="distance" placeholder="Distance (km)" />
+
     <select id="mode">
-        <option value="car">🚗 Car</option>
-        <option value="bus">🚌 Bus</option>
-        <option value="bike">🚴 Bike</option>
-        <option value="walk">🚶 Walk</option>
+      <option value="car">🚗 Car</option>
+      <option value="bus">🚌 Bus</option>
+      <option value="bike">🚴 Bike</option>
+      <option value="walk">🚶 Walk</option>
     </select>
-    <button id="logBtn">Log Commute</button>
-    </section>
-    <section class="card stats-card">
-        <h2>Your Commute Stats</h2>
-        <p id="stats">No commutes logged yet.</p>   
-    </section>
-    </div>
-    </div>
-    <script src="script.js"></script>
+
+    <button onclick="logTrip()">+ Add Trip</button>
+<center>
+    <p id="result"></p>
+  </div>
+
+</center>
+<center>
+  <div class="card this-week">
+    <h2><i class="fa-solid fa-leaf">This Week</i></h2>
+    <p id="weekly"></p>
+  </div>
+  <div class="card your-trips">
+    <h3><i class="fa-brands fa-slack"> Your Trips </i></h3>
+    <ul id="logList"></ul>
+  </div>
+
+</div>
+</center>
+<script src="script.js"></script>
 </body>
 </html>
