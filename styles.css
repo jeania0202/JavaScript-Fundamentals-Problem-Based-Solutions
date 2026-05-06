@@ -33,7 +33,6 @@ body {
 .card {
   background: #fff8f0;
   padding: 18px;
-
   margin-bottom: 15px;
   border-radius: 14px;
   box-shadow: 0 5px 12px rgba(0,0,0,0.40);
@@ -43,4 +42,42 @@ body {
   background: #c0a37c;
   color: rgb(68, 41, 16);
   
+}
+input
+{
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #d2b48c;
+} select {
+  width: 99%;
+  padding: 10px;
+        margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #d2b48c;
+}
+
+button {
+  width: 99%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #926845;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background: #7a5c3e;
+}
+
+#result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 18px;
 }
