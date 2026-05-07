@@ -15,19 +15,29 @@ function getWeekKey(date = new Date()) {
 }
 
 function logTrip() {
-  const mode = document.getElementById('mode').value;
-  const date = new Date();
-  const weekKey = getWeekKey(date);
+  const distance = parseFloat(document.getElementById("distance").value);
+  const mode = document.getElementById("mode").value;
+
+  if (!distance || distance <= 0) {
+    alert("Please enter a valid distance.");
+    return;
+  }
+
+  const carEmission = distance * carbonRates.car;
+  const userEmission = distance * carbonRates[mode];
+  const saved = carEmission - userEmission;
+
+  const weekKey = getWeekKey();
     if (!weeklyLogs[weekKey]) {
-    weeklyLogs[weekKey] = [];
+        weeklyLoggs[weekKey] = [];
     }
-    weeklyLogs[weekKey].push({ mode, date });   
-    displayResults();
+    weeklyLogs[weekKey].push({ mode, distance, saved, date: new Date() });
+
+    document.getElementById("result").innerText =
+    `You saved ${saved.toFixed(2)} kg CO2 today vs. driving 🚗`;
+  
+    updateUI();
 }
-
-
- 
-
 
 
 
