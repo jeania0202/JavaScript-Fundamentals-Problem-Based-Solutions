@@ -31,6 +31,8 @@ body {
 }
 
 .card {
+  width: 70%;
+  align-items: center;
   background: #fff8f0;
   padding: 18px;
   margin-bottom: 15px;
