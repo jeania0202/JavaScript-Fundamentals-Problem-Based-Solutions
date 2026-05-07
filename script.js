@@ -14,6 +14,22 @@ function getWeekKey(date = new Date()) {
   return `${date.getFullYear()}-W${week}`;
 }
 
+function logTrip() {
+  const mode = document.getElementById('mode').value;
+  const date = new Date();
+  const weekKey = getWeekKey(date);
+    if (!weeklyLogs[weekKey]) {
+    weeklyLogs[weekKey] = [];
+    }
+    weeklyLogs[weekKey].push({ mode, date });   
+    displayResults();
+}
+
+
+ 
+
+
+
 
 
 
