@@ -28,8 +28,9 @@ function logTrip() {
   const saved = carEmission - userEmission;
 
   const weekKey = getWeekKey();
+
     if (!weeklyLogs[weekKey]) {
-        weeklyLoggs[weekKey] = [];
+        weeklyLogs[weekKey] = [];
     }
     weeklyLogs[weekKey].push({ mode, distance, saved, date: new Date() });
 
@@ -37,6 +38,55 @@ function logTrip() {
     `You saved ${saved.toFixed(2)} kg CO2 today vs. driving 🚗`;
   
     updateUI();
+}
+
+
+function updateUI() {
+  const currentWeek = getWeekKey();
+  const list = document.getElementById("logList");
+  const weekly = document.getElementById("weekly");
+
+  list.innerHTML = "";
+
+  const logs = weeklyLogs[currentWeek] || [];
+
+  let totalSaved = 0;
+  let ecoTrips = 0;
+
+  logs.forEach(log => {
+    totalSaved += log.saved;
+    if (log.mode !== "car") ecoTrips++;
+
+    const li = document.createElement("li");
+    li.textContent = `${log.date} - ${log.mode.toUpperCase()} ${log.distance} km → Saved ${log.saved.toFixed(2)} kg`;
+    list.appendChild(li);
+  });
+
+  weekly.innerText =
+    `${ecoTrips} eco trips = ${totalSaved.toFixed(2)} kg CO2 saved this week `;
+
+  renderPastWeeks();
+}
+
+function renderPastWeeks() {
+  const container = document.getElementById("pastWeeks");
+  container.innerHTML = "<h3>Past Weeks</h3>";
+
+  Object.keys(weeklyLogs).forEach(week => {
+    const logs = weeklyLogs[week];
+
+    let total = 0;
+    logs.forEach(l => total += l.saved);
+
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <strong>${week}</strong><br>
+      Total Saved: ${total.toFixed(2)} kg CO2
+    `;
+
+    container.appendChild(div);
+  });
 }
 
 
