@@ -3,12 +3,23 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f3e5d3;
   color: #4a3b2a;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .app {
-  max-width: 600px;
+  width: 95%;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
 }
 
 .header {
@@ -26,42 +37,44 @@ body {
   border: 3px solid #a67c52;
 }
 .subtitle {
-  font-size: 14px;
+  text-align: center;
+  font-size: 15px;
   color: #7a5c3e;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
 .card {
-  width: 70%;
+  box-sizing: border-box;
   align-items: center;
   background: #fff8f0;
-  padding: 18px;
+  padding: 10px;
   margin-bottom: 15px;
-  border-radius: 14px;
+  border-radius: 18px;
   box-shadow: 0 5px 12px rgba(0,0,0,0.40);
 }
 
-.card.this-week {
+.this-week {
   background: #c0a37c;
   color: rgb(68, 41, 16);
-  
+  text-align: center;
 }
-input
-{
-    width: 95%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 10px;
-    border: 1px solid #d2b48c;
-} select {
-  width: 99%;
-  padding: 10px;
-  margin: 8px 0;
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
   border-radius: 10px;
   border: 1px solid #d2b48c;
+
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
 button {
-  width: 99%;
+  width: 100%;
   padding: 12px;
   margin: 8px 0;
   background: #926845;
@@ -83,3 +96,7 @@ button:hover {
 ul {
   padding-left: 18px;
 }
+#mode{
+  width: 920px ;
+}
+

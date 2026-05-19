@@ -63,7 +63,7 @@ function updateUI() {
   });
 
   weekly.innerText =
-    `${ecoTrips} eco trips = ${totalSaved.toFixed(2)} kg CO2 saved this week `;
+    `${ecoTrips} Eco Trips = ${totalSaved.toFixed(2)} kg CO2 saved this week `;
 
   renderPastWeeks();
 }
